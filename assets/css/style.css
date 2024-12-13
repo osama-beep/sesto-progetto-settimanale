@@ -1,0 +1,23 @@
+
+.product-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-modal-image {
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.product-modal-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 25;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
