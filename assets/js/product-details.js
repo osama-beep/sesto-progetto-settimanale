@@ -31,32 +31,31 @@ function fetchProductDetails(productId) {
 function displayProductDetails(product) {
   const detailsContainer = document.getElementById("product-details");
   detailsContainer.innerHTML = `
-        <div class="row">
-            <div class="col-md-6">
-                <img src="${product.imageUrl}" class="img-fluid" alt="${
-    product.name
-  }">
-            </div>
-            <div class="col-md-6">
-                <h2>${product.name}</h2>
-                <p><strong>Description:</strong> ${product.description}</p>
-                <p><strong>Brand:</strong> ${product.brand}</p>
-                <p><strong>Price:</strong> $${product.price.toFixed(2)}</p>
-                <p><strong>ID:</strong> ${product._id}</p>
-                <h3>Additional Details</h3>
-                <p><strong>Stock:</strong> ${Math.floor(
-                  Math.random() * 100
-                )} units</p>
-                <p><strong>Rating:</strong> ${(Math.random() * 5).toFixed(
-                  1
-                )} / 5</p>
-                <p><strong>Reviews:</strong> ${Math.floor(
-                  Math.random() * 1000
-                )}</p>
-            </div>
+    <div class="product-details-container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="${product.imageUrl}" class="img-fluid product-details-image" alt="${product.name}">
         </div>
-    `;
+        <div class="col-md-6">
+          <h1 class="product-details-title">${product.name}</h1>
+          <div class="mb-3">
+                <span class="badge bg-primary">${product.brand}</span>
+              </div>
+          <p class="product-details-price">€${product.price}</p>
+          <p class="product-details-description">${product.description}</p>
+          <div class="product-details-info">
+            <h3>Additional Details</h3>
+            <p><strong>Stock:</strong> ${Math.floor(Math.random() * 100)} units</p>
+            <p><strong>Rating:</strong> ${(Math.random() * 5).toFixed(1)} / 5</p>
+            <p><strong>Reviews:</strong> ${Math.floor(Math.random() * 1000)}</p>
+            <p><strong>ID:</strong> ${product._id}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
 }
+
 
 function saveProduct(productId) {
   const updatedProduct = {
